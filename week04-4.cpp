@@ -1,12 +1,12 @@
 #include <stdio.h>
 int main()
 {
-    for(int a=0; a<7; a++)
+    for(int a=0; a<4; a++)
     {
-        printf("¦L¥X%d\n",a);
+        printf("å°å‡º:%d\n",a);
     }
     for(int a=1; a<=4; a++)
     {
-        printf("¤HÃþªºª©¥»,¦L¥X:%d\n",a);
+        printf("äººé¡žçš„ç‰ˆæœ¬,å°å‡º:%d\n",a);
     }
 }
