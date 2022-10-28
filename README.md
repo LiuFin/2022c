@@ -16,7 +16,7 @@ int main()
 		}
 }
 ```
-# step01-1_畫星星
+## step01-1_畫星星
 使用的技巧，是先用左手i來建立簡報
 ```cpp
 #include <stdio.h>
@@ -28,7 +28,7 @@ int main()
     }
 }
 ```
-# step01-2_畫金字塔
+## step01-2_畫金字塔
 使用鷹架建金字塔
 ```cpp
 #include <stdio.h>
@@ -47,7 +47,7 @@ int main()
     }
 }
 ```
-# step01-3_暴力法求公因數
+## step01-3_暴力法求公因數
 ```cpp
 #include <stdio.h>
 int main()
@@ -61,7 +61,7 @@ int main()
     printf("找到ans:%d",ans);
 }
 ```
-# step01-4_電腦求公因數比較快的方法
+## step01-4_電腦求公因數比較快的方法
 ```cpp
 #include <stdio.h>
 int main()
@@ -79,7 +79,7 @@ int main()
     printf("中的是:%d",b);
 }
 ```
-# step01-5_什麼東西能成立
+## step01-5_什麼東西能成立
 ```cpp
 #include <stdio.h>
 int main()
@@ -98,3 +98,73 @@ int main()
     if("a==0")printf("不管是什麼東西,幾乎都成立\n");
 }
 ```
+# Week08
+## week08-1_如何只用2個for來畫出直角三角形
+```cpp
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	for(int i=1;i<=n;i++){
+		for(int k=1;k<=n;k++){
+			if(k<=n-i)printf(" ");
+			else printf("*");
+		}
+		printf("\n");
+	}
+}
+```
+## week08-2_如何只用2個while來畫出直角三角形
+```cpp
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	int i=1;
+	while(i<=n){
+        int k=1;
+        while(k<=n){
+			if(k<=n-i)printf(" ");
+			else printf("*");
+            k++;
+		}
+		printf("\n");
+        i++;
+	}
+}
+```
+## week08-3_判斷質數
+判斷某個數是不是質數,就看能不能被約分、能不能被整除。被整除, 就不是質數, 所以就這樣反過來想即可
+```cpp
+#include <stdio.h>
+int main()
+{
+    printf("輸入數字以判斷此數是否為質數");
+    int n;
+    scanf("%d",&n);
+    int bad=0;
+    for(int i=2;i<n;i++){
+        if(n%i==0)bad=1;
+    }
+    if(bad==0)printf("%d是質數",n);
+    else printf("%d不是質數",n);
+}
+```
+## week08-4_用for來判斷質數
+前一題教完「質數判斷」接下來比較難, 要用for迴圈列出一堆數,再逐一進行「質數判斷」
+```cpp
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d",&a);
+	for(int n=2;n<=a;n++){
+		int bad=0;
+		for(int i=2;i<n;i++){
+			if(n%i==0)bad=1;
+		}
+		if(bad==0)printf("%d ",n);
+	}
+}
