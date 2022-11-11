@@ -98,6 +98,61 @@ int main()
     if("a==0")printf("不管是什麼東西,幾乎都成立\n");
 }
 ```
+# Week07
+## week07-1_long long int 的用法～可以輸入很大的數字
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n=123456789123456789;
+    printf("%d\n",n);
+    long long int m=123456789123456789;
+    printf("%lld\n",m);
+}
+```
+## week07-2_long long int 變數的計算
+```cpp
+#include <stdio.h>
+int main()
+{
+    long long int a,b;
+    scanf("%lld%lld",&a,&b);
+    long long int ans;
+    for(long long int i=1;i<=a;i++){
+        if(a%i==0&&b%i==0)ans=i;
+    }
+    printf("答案是:%lld\n",ans);
+}
+```
+## week07-3_long long int 變數的計算～輾轉相除法
+```cpp
+#include <stdio.h>
+int main()
+{
+    long long int a,b,c;
+    scanf("%lld%lld",&a,&b);
+    while(1){
+        c=a%b;
+        printf("%lld %lld %lld\n",a,b,c);
+        if(c==0)break;
+        a=b;
+        b=c;
+    }
+    printf("答案是:%lld\n",b);
+}
+```
+## week07-4_分別列出每位數的方法
+```cpp
+#include <stdio.h>
+int main()
+{
+    int n=1234;
+    while(n>0){
+        printf("個位數是%d\n",n%10);
+        n=n/10;
+    }
+}
+```
 # Week08
 ## week08-1_如何只用2個for來畫出直角三角形
 ```cpp
