@@ -251,3 +251,41 @@ int main()
     }
 }
 ```
+# Week11
+## week11-1_交換兩數順序
+```cpp
+#include <stdio.h>
+int main()
+{
+    int a=50,b=80;
+    printf("a:%d b:%d\n",a,b);
+    int temp=a;
+    a=b;
+    b=temp;
+    printf("a:%d b:%d\n",a,b);
+}
+```
+## week11-2_交換三數順序
+```cpp
+#include <stdio.h>
+main()
+{
+    int a=90,b=80,c=70;
+    if(a>b){
+        int temp=a;
+        a=b;
+        b=temp;
+    }
+    if(b>c){
+        int temp=b;
+        b=c;
+        c=temp;
+    }
+    if(a>b){
+        int temp=a;
+        a=b;
+        b=temp;
+    }
+    printf("a:%d b:%d c:%d",a,b,c);
+}
+```
