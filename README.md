@@ -497,3 +497,78 @@ int main()
 	}
 }
 ```
+# Week13
+## week13-1_買賣股票的最佳時機
+```cpp
+#include <stdio.h>
+int main()
+{
+	int a[30],n,i,j,b,s,p=0;
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++){
+		for(j=i+1;j<n;j++){
+			if(a[j]-a[i]>p){
+				s=a[j];
+				b=a[i];
+				p=s-b;
+			}
+		}
+	}
+	printf("請按任意鍵繼續 . . . \n");
+	printf("最大利潤=%d-%d=%d\n",s,b,p);
+}
+```
+## week13-2_Fibonacci數列
+```cpp
+#include <stdio.h>
+int main()
+{
+	int a[45];
+	a[1]=1;
+	a[0]=1;
+	for(int i=2;i<45;i++){
+		a[i]=a[i-1]+a[i-2];
+	}
+	for(int i=0;i<45;i++){
+		printf("%d ",a[i]);
+	}
+}
+```
+## week13-3_矩陣轉180度
+```cpp
+#include <stdio.h>
+int a[200][200];
+int main()
+{
+    int n,m;
+    scanf("%d%d",&n,&m);
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("\n");
+    for(int i=n-1;i>=0;i++){
+        for(int j=m-1;j>=0;j++){
+            printf("%d",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+```
+## week13-4_新function函式
+```cpp
+#include <stdio.h>
+int addnum(int a,int b)
+{
+    return a+b;
+}
+int main()
+{
+    int ans=addnum(2,3);
+    printf("addnum(2,3)會得到 %d\n",ans);
+}
+```
