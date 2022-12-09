@@ -572,3 +572,95 @@ int main()
     printf("addnum(2,3)會得到 %d\n",ans);
 }
 ```
+# Week14
+## week14-1_了解變數的範圍
+```cpp
+#include <stdio.h>
+int a=10;
+void func()
+{
+    a=30;
+    printf("func()中 a改成:%d\n",a);
+}
+int main()
+{
+    printf("main()中 a是:%d\n",a);
+    func();
+    printf("main()中 a是:%d\n",a);
+}
+```
+## week14-2_呼叫 func() 
+```cpp
+#include <stdio.h>
+int a=10;
+void func()
+{
+    int a=20;
+    printf("func()裡的a是:%d\n",a);
+    a=30;
+    printf("func()中 a改成:%d\n",a);
+}
+int main()
+{
+    printf("main()中 a是:%d\n",a);
+    func();
+    printf("main()中 a是:%d\n",a);
+}
+```
+## week14-3_函式的參數傳遞 
+```cpp
+#include <stdio.h>
+int n=30;
+int funcA(int a,int b)
+{
+    printf("funcA()的a,b是:%d %d\n",a,b);
+    return a+b;
+}
+int funcB(int n)
+{
+    printf("funcB()的n是:%d\n",n);
+    int ans=funcA(n,n);
+    return ans;
+}
+int main()
+{
+    int a=10,b=20;
+    funcB(b);
+    funcA(a,b);
+    printf("main()的n是:%d %d\n",a,b);
+}
+```
+## week14-4_while迴圈輾轉相除法
+```cpp
+#include <stdio.h>
+int main()
+{
+    int a,b,c;
+    scanf("%d%d",&a,&b);
+    while(1){
+        c=a%b;
+        printf("%d %d %d\n",a,b,c);
+        if(c==0)break;
+        a=b;
+        b=c;
+    }
+    printf("%d",b);
+}
+```
+## week14-5_呼叫函式的方式來計算「輾轉相除法」找最大公因數
+```cpp
+#include <stdio.h>
+int gcd(int a,int b)
+{
+    if(a==0)return b;
+    if(b==0)return a;
+    return gcd(b,a%b);
+}
+int main()
+{
+    int a,b;
+    scanf("%d%d",&a,&b);
+    int ans=gcd(a,b);
+    printf("%d",ans);
+}
+```
